@@ -1,3 +1,4 @@
+import 'package:bank_qris/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -48,8 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset('assets/logo_light.png'),
-            const Text(
+            const SizedBox(
+              height: 50,
+            ),
+            Text(
               'You have pushed the button this many times:',
+              style: blueTextStyle.copyWith(
+                fontSize: 14,
+              ),
             ),
             Text(
               '$_counter',
