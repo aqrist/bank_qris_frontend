@@ -114,27 +114,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             const SizedBox(
                               height: 20.0,
                             ),
-                            SizedBox(
-                              width: double.infinity,
-                              height: 24.0,
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const SignInPage()));
-                                },
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  'Sign In',
-                                  style: greyTextStyle.copyWith(
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ),
+                            CustomTextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const SignInPage()));
+                              },
+                              title: 'Sign In',
                             ),
                           ],
                         )
