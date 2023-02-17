@@ -1,4 +1,6 @@
 import 'package:bank_qris/shared/theme.dart';
+import 'package:bank_qris/ui/pages/sign_in_page.dart';
+import 'package:bank_qris/ui/widgets/buttons.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -105,27 +107,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   currentIndex == 2
                       ? Column(
                           children: [
-                            SizedBox(
-                              width: double.infinity,
-                              height: 50.0,
-                              child: TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  backgroundColor: purpleColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                      26.0,
-                                    ),
-                                  ),
-                                ),
-                                child: Text(
-                                  'Get Started',
-                                  style: whiteTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: semiBold,
-                                  ),
-                                ),
-                              ),
+                            CustomFilledButton(
+                              title: 'Get Started',
+                              onPressed: () {},
                             ),
                             const SizedBox(
                               height: 20.0,
@@ -134,7 +118,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               width: double.infinity,
                               height: 24.0,
                               child: TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const SignInPage()));
+                                },
                                 style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                 ),
@@ -190,30 +180,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               ),
                             ),
                             const Spacer(),
-                            SizedBox(
-                              width: 150.0,
-                              height: 50.0,
-                              child: TextButton(
-                                onPressed: () {
-                                  carouselController.nextPage();
-                                },
-                                style: TextButton.styleFrom(
-                                  backgroundColor: purpleColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                      26.0,
-                                    ),
-                                  ),
-                                ),
-                                child: Text(
-                                  'Continue',
-                                  style: whiteTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: semiBold,
-                                  ),
-                                ),
-                              ),
-                            )
+                            CustomFilledButton(
+                              widht: 150.0,
+                              title: 'Continue',
+                              onPressed: () {
+                                carouselController.nextPage();
+                              },
+                            ),
                           ],
                         )
                 ],
