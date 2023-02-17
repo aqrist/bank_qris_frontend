@@ -1,4 +1,4 @@
-# bank_qris
+# Bank QRIS
 
 A new Flutter project.
 
