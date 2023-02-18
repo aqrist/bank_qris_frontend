@@ -1,10 +1,11 @@
-import 'package:bank_qris/shared/theme.dart';
-import 'package:bank_qris/ui/widgets/buttons.dart';
-import 'package:bank_qris/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+import '../../shared/theme.dart';
+import '../widgets/buttons.dart';
+import '../widgets/forms.dart';
+
+class SignUpSetID extends StatelessWidget {
+  const SignUpSetID({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class SignInPage extends StatelessWidget {
           ),
           // Title
           Text(
-            'Sign In & \nrow Your Finance',
+            'Verify Your \nAccount',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
@@ -46,35 +47,51 @@ class SignInPage extends StatelessWidget {
               color: whiteColor,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Form input email
-                const CustomFormField(
-                  title: 'Email Address',
+                // Image Placeholder
+                Container(
+                  height: 120,
+                  width: 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: lightBackgroundColor,
+                  ),
+                  child: Center(
+                    child: Image.asset('assets/upload.png'),
+                  ),
                 ),
-
-                const SizedBox(height: 16.0),
-                // Pasword
-                const CustomFormField(
-                  title: 'Password',
-                  obscureText: true,
-                ),
+                // Container(
+                //   height: 120,
+                //   width: 120,
+                //   decoration: const BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     image: DecorationImage(
+                //       fit: BoxFit.cover,
+                //       image: AssetImage(
+                //         'assets/person.png',
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 const SizedBox(
-                  height: 8.0,
+                  height: 16,
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password',
-                    style: blueTextStyle,
+                Text(
+                  'Passport / ID Card',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
                   ),
                 ),
                 const SizedBox(
-                  height: 30.0,
+                  height: 30,
                 ),
                 CustomFilledButton(
-                  onPressed: () {},
-                  title: 'Sign In',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-up-success');
+                  },
+                  title: 'Continue',
                   height: 50.0,
                 ),
                 const SizedBox(
@@ -83,9 +100,9 @@ class SignInPage extends StatelessWidget {
                 CustomTextButton(
                   height: 24.0,
                   onPressed: () {
-                    Navigator.pushNamed(context, '/sign-up');
+                    Navigator.pushNamed(context, '/sign-in');
                   },
-                  title: 'Create a new account',
+                  title: 'Skip for now',
                 ),
               ],
             ),

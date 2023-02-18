@@ -109,18 +109,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           children: [
                             CustomFilledButton(
                               title: 'Get Started',
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/sign-up');
+                              },
                             ),
                             const SizedBox(
                               height: 20.0,
                             ),
                             CustomTextButton(
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const SignInPage()));
+                                Navigator.pushNamed(context, '/sign-in');
                               },
                               title: 'Sign In',
                             ),
