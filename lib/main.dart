@@ -1,4 +1,7 @@
+import 'package:bank_qris/shared/theme.dart';
+import 'package:bank_qris/ui/pages/home_page.dart';
 import 'package:bank_qris/ui/pages/onboarding_page.dart';
+import 'package:bank_qris/ui/pages/profile_page.dart';
 import 'package:bank_qris/ui/pages/sign_in_page.dart';
 import 'package:bank_qris/ui/pages/sign_up_page.dart';
 import 'package:bank_qris/ui/pages/sign_up_set_id.dart';
@@ -26,7 +29,24 @@ class MyApp extends StatelessWidget {
         '/sign-up-set-profile': (context) => const SignUpSetProfile(),
         '/sign-up-set-id': (context) => const SignUpSetID(),
         '/sign-up-success': (context) => const SignUpSuccess(),
+        '/home': (context) => const HomePage(),
+        '/profile': (context) => const ProfilePage(),
       },
+      theme: ThemeData(
+        scaffoldBackgroundColor: lightBackgroundColor,
+        appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(
+            color: blackColor,
+          ),
+          centerTitle: true,
+          backgroundColor: lightBackgroundColor,
+          elevation: 0,
+          titleTextStyle: blackTextStyle.copyWith(
+            fontSize: 20,
+            fontWeight: semiBold,
+          ),
+        ),
+      ),
     );
   }
 }

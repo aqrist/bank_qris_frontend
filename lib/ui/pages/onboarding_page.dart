@@ -1,5 +1,4 @@
 import 'package:bank_qris/shared/theme.dart';
-import 'package:bank_qris/ui/pages/sign_in_page.dart';
 import 'package:bank_qris/ui/widgets/buttons.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -110,7 +109,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             CustomFilledButton(
                               title: 'Get Started',
                               onPressed: () {
-                                Navigator.pushNamed(context, '/sign-up');
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, '/sign-up', (route) => false);
                               },
                             ),
                             const SizedBox(
@@ -118,7 +118,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             ),
                             CustomTextButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, '/sign-in');
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, '/sign-in', (route) => false);
                               },
                               title: 'Sign In',
                             ),
