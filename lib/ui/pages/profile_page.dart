@@ -89,12 +89,20 @@ class ProfilePage extends StatelessWidget {
                 ProfileMenuItem(
                   icon: 'assets/pr_profile.png',
                   title: 'Edit Profile',
-                  ontap: () {},
+                  ontap: () async {
+                    if (await Navigator.pushNamed(context, '/pin') == true) {
+                      Navigator.pushNamed(context, '/profile-edit');
+                    }
+                  },
                 ),
                 ProfileMenuItem(
                   icon: 'assets/pr_pin.png',
                   title: 'My PIN',
-                  ontap: () {},
+                  ontap: () async {
+                    if (await Navigator.pushNamed(context, '/pin') == true) {
+                      Navigator.pushNamed(context, '/profile-edit-pin');
+                    }
+                  },
                 ),
                 ProfileMenuItem(
                   icon: 'assets/pr_setting.png',

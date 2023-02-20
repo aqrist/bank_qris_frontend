@@ -77,3 +77,37 @@ class CustomTextButton extends StatelessWidget {
     );
   }
 }
+
+class CustomPinButton extends StatelessWidget {
+  final String title;
+  final VoidCallback? ontap;
+  const CustomPinButton({
+    super.key,
+    required this.title,
+    this.ontap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: ontap,
+      child: Container(
+        width: 66,
+        height: 66,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: numberBgColor,
+        ),
+        child: Center(
+          child: Text(
+            title,
+            style: whiteTextStyle.copyWith(
+              fontSize: 22,
+              fontWeight: semiBold,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,6 +1,10 @@
 import 'package:bank_qris/shared/theme.dart';
 import 'package:bank_qris/ui/pages/home_page.dart';
 import 'package:bank_qris/ui/pages/onboarding_page.dart';
+import 'package:bank_qris/ui/pages/pin_page.dart';
+import 'package:bank_qris/ui/pages/profile_edit_page.dart';
+import 'package:bank_qris/ui/pages/profile_edit_pin_page.dart';
+import 'package:bank_qris/ui/pages/profile_edit_success_page.dart';
 import 'package:bank_qris/ui/pages/profile_page.dart';
 import 'package:bank_qris/ui/pages/sign_in_page.dart';
 import 'package:bank_qris/ui/pages/sign_up_page.dart';
@@ -31,6 +35,10 @@ class MyApp extends StatelessWidget {
         '/sign-up-success': (context) => const SignUpSuccess(),
         '/home': (context) => const HomePage(),
         '/profile': (context) => const ProfilePage(),
+        '/profile-edit': (context) => const ProfileEditPage(),
+        '/profile-edit-pin': (context) => const ProfileEditPinPage(),
+        '/profile-edit-success': (context) => const ProfileEditSuccessPage(),
+        '/pin': (context) => const PinPage(),
       },
       theme: ThemeData(
         scaffoldBackgroundColor: lightBackgroundColor,
