@@ -1,5 +1,5 @@
+import 'package:bank_qris/ui/widgets/buttons.dart';
 import 'package:bank_qris/ui/widgets/data_provider_item.dart';
-import 'package:bank_qris/ui/widgets/topup_bank_item.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/theme.dart';
@@ -74,21 +74,33 @@ class DataProviderPage extends StatelessWidget {
             ),
           ),
           Column(
-            children: const [
-              DataProviderItem(
+            children: [
+              const DataProviderItem(
                 imgUrl: 'assets/telkomsel.png',
                 title: 'Telkomsel',
                 isSelected: true,
               ),
-              DataProviderItem(
+              const DataProviderItem(
                 imgUrl: 'assets/indosat.png',
                 title: 'Indosat',
               ),
-              DataProviderItem(
+              const DataProviderItem(
                 imgUrl: 'assets/singtel.png',
                 title: 'Singtel',
                 isAvailable: false,
               ),
+              const SizedBox(
+                height: 135,
+              ),
+              CustomFilledButton(
+                title: 'Continue',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/data-provider-package-select');
+                },
+              ),
+              const SizedBox(
+                height: 57,
+              )
             ],
           )
         ],

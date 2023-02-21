@@ -1,5 +1,7 @@
 import 'package:bank_qris/shared/theme.dart';
 import 'package:bank_qris/ui/pages/data_provider_page.dart';
+import 'package:bank_qris/ui/pages/data_provider_select_data_page.dart';
+import 'package:bank_qris/ui/pages/data_provider_success_page.dart';
 import 'package:bank_qris/ui/pages/home_page.dart';
 import 'package:bank_qris/ui/pages/onboarding_page.dart';
 import 'package:bank_qris/ui/pages/pin_page.dart';
@@ -53,6 +55,9 @@ class MyApp extends StatelessWidget {
         '/transfer-amount': (context) => const TransferAmountPage(),
         '/transfer-success': (context) => const TransferSuccessPage(),
         '/data-provider': (context) => const DataProviderPage(),
+        '/data-provider-package-select': (context) =>
+            const DataProviderSelectDataPage(),
+        '/data-provider-success': (context) => const DataProviderSuccess(),
       },
       theme: ThemeData(
         scaffoldBackgroundColor: lightBackgroundColor,

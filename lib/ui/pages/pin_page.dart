@@ -1,3 +1,4 @@
+import 'package:bank_qris/shared/shared_methods.dart';
 import 'package:bank_qris/shared/theme.dart';
 import 'package:bank_qris/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +20,13 @@ class _PinPageState extends State<PinPage> {
       });
     }
 
-    if (pinController.text == '123123') {
-      Navigator.pop(context, true);
+    if (pinController.text.length == 6) {
+      if (pinController.text == '123123') {
+        Navigator.pop(context, true);
+      } else {
+        showCustomSnackbar(context, 'PIN yang anda masukan salah, coba lagi');
+        pinController.text = '';
+      }
     }
   }
 
