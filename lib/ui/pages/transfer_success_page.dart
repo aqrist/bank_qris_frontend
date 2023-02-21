@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 import '../widgets/buttons.dart';
 
-class ProfileEditSuccessPage extends StatelessWidget {
-  const ProfileEditSuccessPage({super.key});
+class TransferSuccessPage extends StatelessWidget {
+  const TransferSuccessPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Nice Update',
+              'Berhasil Transfer',
               textAlign: TextAlign.center,
               style: blackTextStyle.copyWith(
                 fontSize: 20,
@@ -25,7 +25,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
               height: 26.0,
             ),
             Text(
-              'Your data is safe with \nour system',
+              'Use the money wisely and \ngrow your finance',
               textAlign: TextAlign.center,
               style: greyTextStyle.copyWith(
                 fontSize: 16,
@@ -39,7 +39,7 @@ class ProfileEditSuccessPage extends StatelessWidget {
                 Navigator.pushNamedAndRemoveUntil(
                     context, '/home', (route) => false);
               },
-              title: 'Home',
+              title: 'Back To Home',
               widht: 183,
             )
           ],

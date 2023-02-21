@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
           buildProfile(context),
           buildCard(),
           buildLevel(),
-          buildServices(),
+          buildServices(context),
           buildTransaction(),
           buildSendAgain(),
           buildFriendlyTips(),
@@ -269,7 +269,7 @@ class HomePage extends StatelessWidget {
         ),
       );
 
-  Widget buildServices() => Container(
+  Widget buildServices(BuildContext context) => Container(
         margin: const EdgeInsets.only(top: 30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -288,12 +288,16 @@ class HomePage extends StatelessWidget {
                 HomeServiceItem(
                   icon: 'assets/topup.png',
                   title: 'Top Up',
-                  ontap: () {},
+                  ontap: () {
+                    Navigator.pushNamed(context, '/topup');
+                  },
                 ),
                 HomeServiceItem(
                   icon: 'assets/send.png',
                   title: 'Send',
-                  ontap: () {},
+                  ontap: () {
+                    Navigator.pushNamed(context, '/transfer');
+                  },
                 ),
                 HomeServiceItem(
                   icon: 'assets/withdraw.png',
@@ -303,7 +307,11 @@ class HomePage extends StatelessWidget {
                 HomeServiceItem(
                   icon: 'assets/more.png',
                   title: 'More',
-                  ontap: () {},
+                  ontap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const MoreDialog());
+                  },
                 ),
               ],
             )
@@ -448,4 +456,79 @@ class HomePage extends StatelessWidget {
           ],
         ),
       );
+}
+
+class MoreDialog extends StatelessWidget {
+  const MoreDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: EdgeInsets.zero,
+      alignment: Alignment.bottomCenter,
+      content: Container(
+        padding: const EdgeInsets.all(30),
+        height: 326,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          color: lightBackgroundColor,
+          borderRadius: BorderRadius.circular(40),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Do more with us',
+              style: blackTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: semiBold,
+              ),
+            ),
+            const SizedBox(
+              height: 13.0,
+            ),
+            Wrap(
+              spacing: 29,
+              runSpacing: 25,
+              children: [
+                HomeServiceItem(
+                  icon: 'assets/pp_data.png',
+                  title: 'Data',
+                  ontap: () {
+                    Navigator.pushNamed(context, '/data-provider');
+                  },
+                ),
+                HomeServiceItem(
+                  icon: 'assets/pp_water.png',
+                  title: 'Water',
+                  ontap: () {},
+                ),
+                HomeServiceItem(
+                  icon: 'assets/pp_stream.png',
+                  title: 'Stream',
+                  ontap: () {},
+                ),
+                HomeServiceItem(
+                  icon: 'assets/pp_movie.png',
+                  title: 'Movie',
+                  ontap: () {},
+                ),
+                HomeServiceItem(
+                  icon: 'assets/pp_food.png',
+                  title: 'Food',
+                  ontap: () {},
+                ),
+                HomeServiceItem(
+                  icon: 'assets/pp_travel.png',
+                  title: 'Travel',
+                  ontap: () {},
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
 }

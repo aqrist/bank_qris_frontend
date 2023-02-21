@@ -1,4 +1,5 @@
 import 'package:bank_qris/shared/theme.dart';
+import 'package:bank_qris/ui/pages/data_provider_page.dart';
 import 'package:bank_qris/ui/pages/home_page.dart';
 import 'package:bank_qris/ui/pages/onboarding_page.dart';
 import 'package:bank_qris/ui/pages/pin_page.dart';
@@ -12,6 +13,12 @@ import 'package:bank_qris/ui/pages/sign_up_set_id.dart';
 import 'package:bank_qris/ui/pages/sign_up_set_profile.dart';
 import 'package:bank_qris/ui/pages/sign_up_success.dart';
 import 'package:bank_qris/ui/pages/splash_page.dart';
+import 'package:bank_qris/ui/pages/topup_amount_page.dart';
+import 'package:bank_qris/ui/pages/topup_page.dart';
+import 'package:bank_qris/ui/pages/topup_success_page.dart';
+import 'package:bank_qris/ui/pages/transfer_amount_page.dart';
+import 'package:bank_qris/ui/pages/transfer_page.dart';
+import 'package:bank_qris/ui/pages/transfer_success_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,6 +46,13 @@ class MyApp extends StatelessWidget {
         '/profile-edit-pin': (context) => const ProfileEditPinPage(),
         '/profile-edit-success': (context) => const ProfileEditSuccessPage(),
         '/pin': (context) => const PinPage(),
+        '/topup': (context) => const TopUpPage(),
+        '/topup-amount': (context) => const TopUpAmountPage(),
+        '/topup-success': (context) => const TopUpSuccessPage(),
+        '/transfer': (context) => const TransferPage(),
+        '/transfer-amount': (context) => const TransferAmountPage(),
+        '/transfer-success': (context) => const TransferSuccessPage(),
+        '/data-provider': (context) => const DataProviderPage(),
       },
       theme: ThemeData(
         scaffoldBackgroundColor: lightBackgroundColor,
